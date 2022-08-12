@@ -15,6 +15,8 @@ console.log(myNewCar);
 // another example with object
 let userName = { name: "John Doe" };
 let userSex = { sex: "Female", name: "nilesh" };
+let anotherUser = { ...userName };
+console.log(anotherUser);
 
 let user = { ...userName, ...userSex };
 
@@ -65,3 +67,14 @@ function sumNumber(...rest) {
 }
 var result = sumNumber(2, 3, 5, 8, 7);
 console.log(result);
+
+// rest with object
+
+var students = {
+    name: "Nilesh",
+    age: 25,
+    hobbies: ["Cricket", "Gaming"],
+};
+
+var { age, ...rest } = students;
+console.log(rest);
