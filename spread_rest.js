@@ -25,3 +25,5 @@ var arr3 = [7, 8, 9];
 var arr4 = [...arr1, ...arr2, ...arr3];
 console.log(...arr1);
 console.log(arr4);
+
+// spread operator example
