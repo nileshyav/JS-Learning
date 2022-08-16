@@ -19,8 +19,12 @@
 var loadData = async function () {
     url = "https://api.chucknorris.io/jokes/random";
     var res = await fetch(url);
-    var dta = await res.json();
-    console.log(dta.value);
+    if (res.ok == true) {
+        var dta = await res.json();
+        console.log(dta.value);
+    } else {
+        console.log("err");
+    }
 };
 
 loadData();
