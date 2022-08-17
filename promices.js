@@ -1,3 +1,4 @@
+/*
 function one() {
     return "I am One";
 }
@@ -6,7 +7,7 @@ function getDataFromAws() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve("data fetched");
-        }, 30000);
+        }, 300);
     });
 }
 
@@ -26,3 +27,32 @@ var callMe = async () => {
 };
 
 callMe();
+*/
+
+// producing code
+var getData = function () {
+    var url = "https://api.chucknorro/jokes/random";
+    var res = fetch(url);
+    return new Promise((resolve, reject) => {
+        if (res.ok == true) {
+            resolve(res);
+        } else {
+            reject("Request is failed");
+        }
+    });
+};
+
+var response = getData();
+
+// consuming code
+response
+    .then((req) => {
+        return req.json();
+    })
+
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
