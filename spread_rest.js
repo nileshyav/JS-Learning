@@ -23,6 +23,7 @@ let user = { ...userName, ...userSex };
 console.log(user);
 
 var arr1 = [1, 2, 3];
+
 var arr2 = [4, 5, 6];
 var arr3 = [7, 8, 9];
 
