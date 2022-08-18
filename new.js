@@ -1,3 +1,4 @@
+// creating object with the constructor function
 const User = function (firstName, lastName, courseCount) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -11,9 +12,12 @@ const User = function (firstName, lastName, courseCount) {
 };
 
 User.prototype.address = ""; // property added  in the functional object
+// adding function getFirstName function to the User property
 User.prototype.getFirstName = function () {
     console.log(`First name is ${this.firstName}`);
 };
+
+//-------------------------------------------------------------------
 
 const nilesh = new User("Nilesh", "yadav", 5);
 nilesh.address = "Azamgarh";
