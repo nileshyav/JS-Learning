@@ -1,4 +1,5 @@
-/*let sum = 0;
+/*
+let sum = 0;
 
 let calc = (n) => {
     for (let i = 0; i <= n; i++) {
@@ -33,3 +34,50 @@ console.time();
 console.log(efficeient(5));
 console.timeEnd();
 */
+
+var sum = 0;
+let calc = (n) => {
+    for (let i = 0; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+};
+
+function memoize(fn) {
+    let cache = {};
+    return function efficientFn(...rest) {
+        var value = rest[0];
+
+        if (value in cache) {
+            console.log("Value from cache");
+            return cache[value];
+        } else {
+            var result = fn(value);
+            cache[value] = result;
+            console.log("Function rxecuting first time");
+            return result;
+        }
+    };
+}
+
+let runFn = memoize(calc);
+runFn(5);
+console.time();
+console.log(runFn(5));
+console.timeEnd();
+
+console.time();
+console.log(runFn(5));
+console.timeEnd();
+
+console.time();
+console.log(runFn(5));
+console.timeEnd();
+
+console.time();
+console.log(runFn(5));
+console.timeEnd();
+
+console.time();
+console.log(runFn(5));
+console.timeEnd();
