@@ -51,6 +51,7 @@ response
     })
 
     .then((data) => {
+        debugger;
         console.log(data);
     })
     .catch((error) => {
