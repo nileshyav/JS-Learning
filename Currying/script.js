@@ -14,3 +14,10 @@ console.log(result);
 
 // TODO: THis is currying
 // console.log(one(4)(4)(4));
+
+// TODO: IMplementing rest operator
+function other(...rest) {
+    console.log(rest);
+}
+
+other(4, 5, 8, 7, 9, 10);
